@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+   xmlns:h="http://java.sun.com/jsf/html"
+   xmlns:f="http://java.sun.com/jsf/core"
+   xmlns:p="http://primefaces.org/ui">
+  <head>
+   <title>
+    Insertar
+   </title>
+  </head>
+ <h:body>
+   <h1 align="center">Insertar una nueva nota</h1>
+   <h:form>
+    <h:panelGrid>
+     <h:outputLabel value="Asignatura: " style="font-weight:bold" />
+     <h:inputText value="#{unuser.asignatura}"/>
+     <h:outputLabel value="Nota: " style="font-weight:bold" />
+     <h:inputText value="#{unuser.nota}"/>
+     <p:commandButton value="Insertar" action="#{unuser.add}"/>
+    </h:panelGrid>
+   </h:form>
+ </h:body>
+</html>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+   xmlns:h="http://java.sun.com/jsf/html"
+   xmlns:f="http://java.sun.com/jsf/core"
+   xmlns:p="http://primefaces.org/ui">
+  <h:head>
+   <title>
+    Notas
+   </title>
+  </h:head>
+ <h:body>
+  <h1 align="center">Información de las notas del alumno #{unuser.nombre}</h1>
+  <h:dataTable  value="#{dView.grupos}" var="o">
+   <h:column>
+        Asignatura:
+   </h:column>
+    <h:column>
+        #{o.nombre}
+   </h:column>
+   <h:column>
+        Nota:
+   </h:column>
+   <h:column>
+        #{o.nota}
+   </h:column>
+
+  <h:column>
+        <h:form>
+		<p:commandButton value="Eliminar" id="ajax" actionListener="#{unuser.del}" styleClass="ui-priority-primary">
+ 			<f:param name="asignatura" value="#{o.nombre}"/>
+			<f:param name="nota" value="#{o.nota}"/>
+		</p:commandButton>
+		<p:commandButton value="Modificar" action="#{unuser.modificar}">
+ 			<f:param name="asignatura" value="#{o.nombre}"/>
+			<f:param name="nota" value="#{o.nota}"/>
+		</p:commandButton>
+  	</h:form>
+   </h:column>
+	
+   
+  </h:dataTable>
+  <h:form>
+    <p:commandButton value="Insertar" action="#{unuser.insertar}"/>
+    <p:commandButton value="Salir" action="#{unuser.logout}"/>
+  </h:form>
+ </h:body>
+</html>
