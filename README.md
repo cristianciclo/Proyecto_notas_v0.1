@@ -13,7 +13,8 @@ y ya tendremos nuesta base de datos creada.
 
 ## 2. Ejecución
    Para iniciar nuestra aplicación nos colocaremos en la raiz del proyecto y ejecutaremos mvn clean install jetty:run
-   y accederemos desde el navegador a localhost:9999
+   y accederemos desde el navegador a localhost:9999.
+   Debemos tener Redis iniciado (en la carpeta src de Redis, ejecutamos ./redis-server ../redis.cli)
   
 ## 3. Funcionamiento
    En la página de inicio de sección, podremos acceder con 3 usuarios (delossantos, jerbi, alcon) y la contraseña son las 3 primeras letras de su nombre.
